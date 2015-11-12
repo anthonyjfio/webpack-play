@@ -1,5 +1,4 @@
 var HtmlWebpack = require('html-webpack-plugin')
-    OpenBrowser = require('open-browser-webpack-plugin')
     ExtractText = require('extract-text-webpack-plugin')
 
 module.exports = {
@@ -22,40 +21,25 @@ module.exports = {
 
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         loader: ExtractText.extract(
           'style',
           'css!cssnext!autoprefixer'
         )
       },
 
-      // {
-      //   test: /\.css$/,
-      //   loaders: [
-      //     'style',
-      //     'css',
-      //     'cssnext',
-      //     'autoprefixer'
-      //   ]
-      // },
-
       {
         test: /\.(otf|eot|ttf|woff)$/,
+        exclude: /node_modules/,
         loader: 'url-loader?limit=8192'
       },
 
       {
         test: /\.(jpe?g|png|gif|svg)$/,
+        exclude: /node_modules/,
         loader: 'url-loader?limit=8192'
       }
     ]
-  },
-
-  devServer: {
-    contentBase: 'src/',
-    historyApiFallback: true,
-    hot: true,
-    progress: true,
-    debug: true
   },
 
   plugins: [
@@ -65,9 +49,6 @@ module.exports = {
       description: 'testing out webpack',
       template: 'src/index.html',
       inject: true
-    }),
-    new OpenBrowser({
-      url: 'http://localhost:8080/webpack-dev-server/'
     }),
     new ExtractText('[name].css')
   ]
