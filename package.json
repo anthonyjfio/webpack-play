@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack-dev.config.js",
+    "prebuild": "bash tools/cleanup.sh",
     "build": "webpack --config config/webpack.config.js -p"
   },
   "devDependencies": {

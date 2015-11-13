@@ -10,7 +10,7 @@ module.exports = {
 
   output: {
     path: __dirname + '/../dist',
-    filename: 'bundle.js'
+    filename: 'bundle-[hash].js'
   },
 
   resolve: {
@@ -57,6 +57,6 @@ module.exports = {
       template: 'src/index.html',
       inject: true
     }),
-    new ExtractText('[name].css')
+    new ExtractText('[name]-[hash].css')
   ]
 }
