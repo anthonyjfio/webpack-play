@@ -1,6 +1,7 @@
 var webpack = require('webpack')
     HtmlWebpack = require('html-webpack-plugin')
     ExtractText = require('extract-text-webpack-plugin')
+    Clean = require('clean-webpack-plugin')
     OpenBrowser = require('open-browser-webpack-plugin')
     merge = require('webpack-merge')
     TARGET = process.env.npm_lifecycle_event
@@ -113,6 +114,7 @@ if (TARGET === 'build') {
       ]
     },
     plugins: [
+      new Clean('dist'),
       new ExtractText('[name]-[hash].css')
     ]
   })

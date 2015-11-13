@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server",
-    "prebuild": "bash tools/cleanup.sh",
     "build": "webpack -p"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "autoprefixer-loader": "^3.1.0",
     "babel-loader": "^5.3.2",
+    "clean-webpack-plugin": "^0.1.4",
     "css-loader": "^0.21.0",
     "cssnext-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^0.8.2",
