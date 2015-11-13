@@ -1,18 +1,24 @@
-var HtmlWebpack = require('html-webpack-plugin')
+var webpack = require('webpack')
+    HtmlWebpack = require('html-webpack-plugin')
     ExtractText = require('extract-text-webpack-plugin')
 
 module.exports = {
 
-  entry: './src/index.js',
+  debug: true,
+
+  entry: './src/entry',
 
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/../dist',
     filename: 'bundle.js'
+  },
+
+  resolve: {
+    extensions: ['', '.js', '.jsx']
   },
 
   module: {
     loaders: [
-
       {
         test: /\.(js|jsx|babel)$/,
         exclude: /node_modules/,
@@ -43,6 +49,7 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.NoErrorsPlugin(),
     new HtmlWebpack({
       title: 'Anthony webpack',
       author: 'Anthony Fiorani',
@@ -52,5 +59,4 @@ module.exports = {
     }),
     new ExtractText('[name].css')
   ]
-
 }

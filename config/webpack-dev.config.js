@@ -1,19 +1,27 @@
-var HtmlWebpack = require('html-webpack-plugin')
+var webpack = require('webpack')
+    HtmlWebpack = require('html-webpack-plugin')
     OpenBrowser = require('open-browser-webpack-plugin')
 
 module.exports = {
   
   debug: true,
 
-  entry: './src/index.js',
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080/',
+    'webpack/hot/only-dev-server',
+    './src/entry'
+  ],
+  
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
 
   module: {
     loaders: [
-
       {
         test: /\.(js|jsx|babel)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loaders: ['react-hot', 'babel']
       },
 
       {
@@ -39,12 +47,12 @@ module.exports = {
   devServer: {
     contentBase: 'src/',
     inline: true,
-    progress: true,
-    debug: true,
-    watch: true
+    hot: true
   },
 
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     new HtmlWebpack({
       title: 'Anthony webpack',
       author: 'Anthony Fiorani',
@@ -56,5 +64,4 @@ module.exports = {
       url: 'http://localhost:8080/webpack-dev-server/'
     })
   ]
-
 }
