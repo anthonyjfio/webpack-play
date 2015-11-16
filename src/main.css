@@ -1,7 +1,7 @@
 @import 'normalize.css';
 
 :root {
-  --color: red;
+  --color: blue;
 }
 body {
   background: var(--color);
