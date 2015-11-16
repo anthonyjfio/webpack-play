@@ -9,14 +9,15 @@
       {%= o.htmlWebpackPlugin.options.title || 'Webpack App' %}
     </title>
     <meta name=viewport content="width=device-width, initial-scale=1">
-    {% if (o.htmlWebpackPlugin.files.favicon) { %}
-    <link rel="shortcut icon" href="{%= o.htmlWebpackPlugin.files.favicon %}">
-    {% } %}
+    <link rel="shortcut icon" href="./favicon.ico">
 
   </head>
   <body>
 
     <div id="app"></div>
+    <footer>
+      <small style="padding-left:32px">{%= o.htmlWebpackPlugin.options.version %}</small>
+    </footer>
 
   </body>
 </html>

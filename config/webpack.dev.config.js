@@ -28,6 +28,16 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['style','css', 'cssnext', 'autoprefixer']
       },
+      {
+        test: /\.(otf|eot|ttf|woff)$/,
+        exclude: /node_modules/,
+        loader: 'file'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        exclude: /node_modules/,
+        loader: 'file'
+      }
     ]
   },
 

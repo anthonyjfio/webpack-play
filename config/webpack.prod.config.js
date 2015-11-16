@@ -18,7 +18,6 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel'
       },
-
       {
         test: /\.css$/,
         exclude: /node_modules/,
@@ -26,6 +25,21 @@ module.exports = {
           'style',
           'css!cssnext!autoprefixer'
         )
+      },
+      {
+        test: /\.(otf|eot|ttf|woff)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=8192'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=8192'
+      },
+      {
+        test: /\.ico$/,
+        exclude: /node_modules/,
+        loader: 'file?name=[path][name].[ext]&context=./src'
       }
     ]
   },
