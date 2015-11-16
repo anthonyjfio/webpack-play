@@ -4,6 +4,8 @@ var webpack = require('webpack')
 
 module.exports = {
   
+  entry: './src/entry.js',
+
   output: {
     path: __dirname + '/../dist',
     filename: 'bundle-[hash].js'
@@ -33,6 +35,7 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.UglifyJsPlugin({
+      mangle: true,
       output: {
         comments: false
       },

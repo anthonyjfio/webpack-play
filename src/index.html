@@ -6,9 +6,12 @@
     <meta name=author content="{%= o.htmlWebpackPlugin.options.author %}">
     <meta name=description content="{%= o.htmlWebpackPlugin.options.description %}">
     <title>
-      {%= o.htmlWebpackPlugin.options.title %}
+      {%= o.htmlWebpackPlugin.options.title || 'Webpack App' %}
     </title>
     <meta name=viewport content="width=device-width, initial-scale=1">
+    {% if (o.htmlWebpackPlugin.files.favicon) { %}
+    <link rel="shortcut icon" href="{%= o.htmlWebpackPlugin.files.favicon %}">
+    {% } %}
 
   </head>
   <body>
