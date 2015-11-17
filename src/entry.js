@@ -1,3 +1,6 @@
+import './main.css'
+import './favicon.ico'
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 

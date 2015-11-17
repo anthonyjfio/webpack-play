@@ -27,6 +27,11 @@ module.exports = {
         )
       },
       {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        loader: 'json'
+      },
+      {
         test: /\.(otf|eot|ttf|woff)$/,
         exclude: /node_modules/,
         loader: 'url-loader?limit=8192'
@@ -39,7 +44,7 @@ module.exports = {
       {
         test: /\.ico$/,
         exclude: /node_modules/,
-        loader: 'file?name=[path][name].[ext]&context=./src'
+        loader: 'file?name=[name].[ext]'
       }
     ]
   },

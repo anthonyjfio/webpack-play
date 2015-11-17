@@ -14,7 +14,13 @@ module.exports = {
       description: pkg.description,
       version: pkg.version,
       template: './src/index.html',
-      inject: true
+      favicon: './src/favicon.ico',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      }
     })
   ]
 }

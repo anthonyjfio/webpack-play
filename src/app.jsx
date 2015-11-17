@@ -1,7 +1,5 @@
-import './main.css'
-import './favicon.ico'
-
 import React from 'react'
+import pkg from '../package.json'
 
 export default class App extends React.Component {
 
@@ -16,6 +14,7 @@ export default class App extends React.Component {
       <div style={styles.root}>
         <h1>Hello world</h1>
         <p>This is my first attempt at configuring webpack and react together</p>
+        <small>{pkg.version}</small>
       </div>
     )
   }
