@@ -27,11 +27,6 @@ module.exports = {
         )
       },
       {
-        test: /\.json$/,
-        exclude: /node_modules/,
-        loader: 'json'
-      },
-      {
         test: /\.(otf|eot|ttf|woff)$/,
         exclude: /node_modules/,
         loader: 'url-loader?limit=8192'
@@ -39,12 +34,10 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         exclude: /node_modules/,
-        loader: 'url-loader?limit=8192'
-      },
-      {
-        test: /\.ico$/,
-        exclude: /node_modules/,
-        loader: 'file?name=[name].[ext]'
+        loaders: [
+          'image-webpack?optimizationLevel=7',
+          'url-loader?name=[name].[ext]&limit=8192'
+        ]
       }
     ]
   },

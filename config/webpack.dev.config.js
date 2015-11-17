@@ -29,11 +29,6 @@ module.exports = {
         loaders: ['style','css', 'cssnext', 'autoprefixer']
       },
       {
-        test: /\.json$/,
-        exclude: /node_modules/,
-        loader: 'json'
-      },
-      {
         test: /\.(otf|eot|ttf|woff)$/,
         exclude: /node_modules/,
         loader: 'file'
@@ -42,11 +37,6 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/,
         exclude: /node_modules/,
         loader: 'file'
-      },
-      {
-        test: /\.ico$/,
-        exclude: /node_modules/,
-        loader: 'file?name=[name].[ext]'
       }
     ]
   },

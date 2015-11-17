@@ -6,6 +6,21 @@ module.exports = {
 
   extensions: ['', '.js', '.jsx'],
 
+  module: {
+    loaders: [
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        loader: 'json'
+      },
+      {
+        test: /\.ico$/,
+        exclude: /node_modules/,
+        loader: 'file?name=[name].[ext]'
+      }
+    ]
+  },
+
   plugins: [
     new webpack.NoErrorsPlugin(),
     new HtmlWebpack({
