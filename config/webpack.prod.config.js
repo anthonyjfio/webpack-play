@@ -4,7 +4,10 @@ var webpack = require('webpack')
 
 module.exports = {
   
-  entry: './src/entry.js',
+  entry: [
+    './src/main.css',
+    './src/entry.js'
+  ],
 
   output: {
     path: __dirname + '/../dist',
@@ -36,7 +39,7 @@ module.exports = {
         exclude: /node_modules/,
         loaders: [
           'image-webpack?optimizationLevel=7',
-          'url-loader?name=[name].[ext]&limit=8192'
+          'url-loader?name=[name]-[hash:20].[ext]&limit=8192'
         ]
       }
     ]

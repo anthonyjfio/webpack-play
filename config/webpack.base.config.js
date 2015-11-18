@@ -16,7 +16,7 @@ module.exports = {
       {
         test: /\.ico$/,
         exclude: /node_modules/,
-        loader: 'file?name=[name].[ext]'
+        loader: 'file'
       }
     ]
   },

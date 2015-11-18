@@ -1,8 +1,54 @@
 @import 'normalize.css';
 
 :root {
-  --color: blue;
+  --bg-color: #fff;
+  --txt-color: #111;
+  --link-color: #888;
 }
-body {
-  background: var(--color);
+
+:root{ font-size: 16px }
+
+@media (min-width:25em) and (max-width:50em) {
+  :root{ font-size:calc(16px + 8 * ((100vw - 25em)/ 400)) }
 }
+
+@media (min-width:50em) { 
+  :root{ font-size:24px }
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: var(--txt-color);
+}
+
+small { font-size: 85% }
+
+.mx-auto { margin: 0 auto }
+
+.m0 { margin: 0 }
+.m1 { margin: .5rem }
+.ml0 { margin-left: 0 }
+.ml1 { margin-left: .5rem }
+.mr0 { margin-right: 0 }
+.mr1 { margin-right: .5rem }
+
+.p0 { padding: 0 }
+.p1 { padding: .5rem }
+.pl0 { padding-left: 0 }
+.pl1 { padding-left: .5rem }
+.pr0 { padding-right: 0 }
+.pr1 { padding-right: .5rem }
+
+.max-width { max-width: 35rem }
+.bg-color { background: var(--bg-color) }
+.txt-color { color: var(--txt-color) }
+.tt-upper { text-transform: uppercase }
+
