@@ -32,7 +32,7 @@ module.exports = {
       {
         test: /\.(otf|eot|ttf|woff)$/,
         exclude: /node_modules/,
-        loader: 'url-loader?limit=8192'
+        loader: 'url-loader?name=[name]-[hash:20].[ext]limit=8192'
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
