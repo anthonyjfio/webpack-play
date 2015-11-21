@@ -11,7 +11,7 @@ module.exports = {
 
   output: {
     path: __dirname + '/../dist',
-    filename: 'bundle-[hash].js'
+    filename: 'bundle.[hash].js'
   },
 
   module: {
@@ -32,21 +32,21 @@ module.exports = {
       {
         test: /\.(otf|eot|ttf|woff)$/,
         exclude: /node_modules/,
-        loader: 'url-loader?name=[name]-[hash:20].[ext]limit=8192'
+        loader: 'url-loader?name=[name].[hash:20].[ext]limit=8192'
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         exclude: /node_modules/,
         loaders: [
           'image-webpack?optimizationLevel=7',
-          'url-loader?name=[name]-[hash:20].[ext]&limit=8192'
+          'url-loader?name=[name].[hash:20].[ext]&limit=8192'
         ]
       }
     ]
   },
 
   plugins: [
-    new ExtractText('[name]-[hash].css'),
+    new ExtractText('[name].[hash].css'),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.UglifyJsPlugin({
